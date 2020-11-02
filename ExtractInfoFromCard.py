@@ -2,9 +2,9 @@ import cv2
 import pytesseract
 
 #v = cv2.imread('ImagesPermis/akthem_permis.png')
-v = cv2.imread('ImagesPermis/permis.jpg')
+#v = cv2.imread('ImagesPermis/permis.jpg')
 #v = cv2.imread('ImagesPermis/outail_permis.png')
-#v = cv2.imread('ImagesPermis/hamza_permis.png')
+v = cv2.imread('ImagesPermis/hamza_permis.png')
 #v = cv2.imread('ImagesPermis/emir_permis.jpg')
 #v = cv2.imread('ImagesPermis/oumaima_permis.jpg')
 
@@ -68,7 +68,7 @@ def filterAndExtractInfo(v):
 
 
 def main():
-    #print(getFaceFromCard())
+    print(getFaceFromCard())
     #filterAndExtractInfo(v)
     cv2.waitKey(0)
     cv2.destroyAllWindows()

@@ -7,7 +7,6 @@ face_cv_list = []
 def extract_face_cv_image(face_cascade,img,filename):
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    gray = cv2.equalizeHist(gray)
 
     faces = face_cascade.detectMultiScale(gray, 2, 5)
     for (x, y, w, h) in faces:
@@ -18,7 +17,7 @@ def extract_face_cv_image(face_cascade,img,filename):
 
 
 def getFaceFromCV():
-    img2 = cv2.imread('ImagesCV/outail_cvv.png')
+    img2 = cv2.imread('ImagesCV/hamzaCvv.PNG')
     extract_face_cv_image(face_cascade, img2, "cv_roi")
     cv2.imshow('Original CV', img2)
     if len(face_cv_list) >0:
