@@ -48,7 +48,7 @@ def filterAndExtractFace(v):
 
 def getFaceFromCard():
     filterAndExtractFace(v)
-    cv2.imshow('Original Permis', v)
+    #cv2.imshow('Original Permis', v)
 
     if len(face_list) >0:
         return max(face_list, key=lambda face: face.shape[0]*face.shape[1])
@@ -56,20 +56,11 @@ def getFaceFromCard():
         return None
 
 
-def filterAndExtractInfo(v):
-    v = cv2.resize(v, (600, 700))
-    v = cv2.rotate(v, cv2.ROTATE_90_COUNTERCLOCKWISE)
-    v=cv2.convertScaleAbs(v, alpha=1.4, beta=50)
-    v=cv2.bilateralFilter(v, 9, 75, 75)
-    cv2.imshow('image', v)
-
-    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-    print(pytesseract.image_to_string(v))
 
 
 def main():
     print(getFaceFromCard())
-    #filterAndExtractInfo(v)
+    #filterAndExtractInfo()
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
