@@ -4,9 +4,12 @@ import pytesseract
 #v = cv2.imread('ImagesPermis/akthem_permis.png')
 #v = cv2.imread('ImagesPermis/permis.jpg')
 #v = cv2.imread('ImagesPermis/outail_permis.png')
-v = cv2.imread('ImagesPermis/hamza_permis.png')
+#v = cv2.imread('ImagesPermis/hamza_permis.png')
 #v = cv2.imread('ImagesPermis/emir_permis.jpg')
 #v = cv2.imread('ImagesPermis/oumaima_permis.jpg')
+
+v = cv2.imread('Uploads/permis.PNG')
+
 
 face_cascade = cv2.CascadeClassifier('HaarCascades/haarcascade_frontalface_default.xml')
 face_list = []
@@ -54,8 +57,6 @@ def getFaceFromCard():
         return max(face_list, key=lambda face: face.shape[0]*face.shape[1])
     else:
         return None
-
-
 
 
 def main():

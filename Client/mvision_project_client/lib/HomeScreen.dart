@@ -33,7 +33,7 @@ class HomeScreenState extends State<HomeScreen>
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-            title: Center(child: Text("Info Verfier")),
+            title: Center(child: Text("Info Verifier")),
             bottom: TabBar(
               isScrollable: true,
               labelColor: Colors.red,
@@ -108,6 +108,7 @@ class HomeScreenState extends State<HomeScreen>
 
               if(snapshot.hasData)
               {
+                send_card = false;
                 var response = snapshot.data as http.Response;
                 print(response.body);
 
@@ -121,7 +122,14 @@ class HomeScreenState extends State<HomeScreen>
                   );
                 }else{
 
-                  this.message_response = "Similarity: "+response.body;
+                  if(response.body == "NOT_SIMILAR")
+                    {
+                      this.message_response = "Similarity: "+response.body;
+
+                    }else{
+                    this.message_response = "Similarity: "+response.body+" %";
+
+                  }
 
                   return Center(
 
@@ -133,7 +141,7 @@ class HomeScreenState extends State<HomeScreen>
 
 
               }else{
-                return Container();
+                return CircularProgressIndicator();
               }
 
             },
@@ -248,6 +256,7 @@ class HomeScreenState extends State<HomeScreen>
 
               if(snapshot.hasData)
               {
+                send_diploma = false;
                 var response = snapshot.data as http.Response;
                 print(response.body);
 
@@ -273,7 +282,7 @@ class HomeScreenState extends State<HomeScreen>
 
 
               }else{
-                return Container();
+                return CircularProgressIndicator();
               }
 
             },

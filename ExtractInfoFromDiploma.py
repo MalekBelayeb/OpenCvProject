@@ -2,11 +2,6 @@ import cv2
 import pytesseract
 
 
-
-
-
-
-
 def compare(str_taken,str_original):
     score = 0
     total = len(str_original)
@@ -41,7 +36,6 @@ def ExecuteDiplomaProcess():
         return "IMG_NOT_CLEAR"
     else:
         return compare(str2.split(),str3.split())
-
 
 def main():
 

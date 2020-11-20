@@ -20,6 +20,7 @@ def getFaceFromCV():
     img2 = cv2.imread('ImagesCV/hamzaCvv.PNG')
     extract_face_cv_image(face_cascade, img2, "cv_roi")
     #cv2.imshow('Original CV', img2)
+
     if len(face_cv_list) >0:
         return max(face_cv_list, key=lambda face: face.shape[0]*face.shape[1])
     else:

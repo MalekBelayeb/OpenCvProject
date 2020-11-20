@@ -4,6 +4,7 @@ import io
 from PIL import Image
 from main import ExecuteProcess
 from ExtractInfoFromDiploma import ExecuteDiplomaProcess
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -17,10 +18,9 @@ def handle_form():
     im_binary = base64.b64decode(im_b64)
     buf = io.BytesIO(im_binary)
     img = Image.open(buf)
-    img.save("Uploads/permis.jpg")
+    img.save("Uploads/permis.PNG")
 
     return ExecuteProcess()
-
 
 @app.route('/getdiploma', methods=['POST'])
 def handle_form_diploma():
@@ -29,7 +29,7 @@ def handle_form_diploma():
     im_binary = base64.b64decode(im_b64)
     buf = io.BytesIO(im_binary)
     img = Image.open(buf)
-    #img.save("Uploads/permis.jpg")
+    img.save("Uploads/diplome1.jpg")
 
     return ExecuteDiplomaProcess()
 

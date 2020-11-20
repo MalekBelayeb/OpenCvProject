@@ -8,6 +8,7 @@ from keras.models import model_from_json
 import cv2
 
 
+
 def preprocess_image(image):
     img = cv2.resize(image, (224, 224))
     img = img_to_array(img)
@@ -81,7 +82,7 @@ def verifyFace(img1, img2,distance_de_similarite):
     print(cosine_similarity)
 
     if (cosine_similarity < distance_de_similarite):
-        return str(cosine_similarity)
+        return str(round(1-cosine_similarity,2)*100)
     else:
         return "NOT_SIMILAR"
 

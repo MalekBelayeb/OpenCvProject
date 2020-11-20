@@ -8,8 +8,7 @@ def ExecuteProcess():
     cardFace=InfoCard.getFaceFromCard()
     cvFace=InfoCV.getFaceFromCV()
 
-    if(cardFace == None):
-
+    if cardFace is None:
         print("no face detected on idcard")
         return "NO_CARD_FACE"
     else:
@@ -22,4 +21,4 @@ def ExecuteProcess():
 
 
 if __name__ == '__main__':
-    ExecuteProcess()
+    print(ExecuteProcess())
